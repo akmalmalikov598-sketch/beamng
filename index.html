@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080d16" />
+  <title>EXTREME DRIVE: NEXT GEN</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="loading">
+    <div class="loading-card">
+      <div class="brand-mark">ED<span>+</span></div>
+      <h1>EXTREME DRIVE</h1>
+      <p>Preparing the test world...</p>
+      <div class="progress"><i id="progress-bar"></i></div>
+      <small id="loading-status">Loading 3D engine</small>
+    </div>
+  </div>
+
+  <div id="game">
+    <canvas id="scene"></canvas>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">ED</div>
+        <div><strong>EXTREME DRIVE</strong><small>NEXT GEN / TEST BUILD 0.1</small></div>
+      </div>
+      <div class="top-actions">
+        <span class="online-dot"></span><span>FREE DRIVE</span>
+        <button id="pause-btn" class="icon-button" title="Pause">Ⅱ</button>
+      </div>
+    </header>
+
+    <section class="left-panel glass">
+      <div class="eyebrow">VEHICLE STATUS</div>
+      <div class="vehicle-name">RAPTOR X</div>
+      <div class="vehicle-class">SPORT UTILITY / AWD</div>
+      <div class="stat-row"><span>ENGINE</span><b id="engine-status">RUNNING</b></div>
+      <div class="stat-row"><span>DRIVE MODE</span><b>SPORT</b></div>
+      <div class="stat-row"><span>GEAR</span><b id="gear">1</b></div>
+      <div class="stat-row"><span>WORLD</span><b>TEST VALLEY</b></div>
+    </section>
+
+    <section class="right-panel glass">
+      <div class="eyebrow">TELEMETRY</div>
+      <div class="telemetry-line"><span>VELOCITY</span><b id="velocity">0</b><small>KM/H</small></div>
+      <div class="meter"><i id="speed-fill"></i></div>
+      <div class="telemetry-line compact"><span>RPM</span><b id="rpm">850</b></div>
+      <div class="meter rpm-meter"><i id="rpm-fill"></i></div>
+      <div class="telemetry-line compact"><span>GROUND</span><b id="ground-state">CONTACT</b></div>
+    </section>
+
+    <section class="bottom-left glass">
+      <div class="eyebrow">CONTROLS</div>
+      <div class="key-row"><kbd>W</kbd><span>Accelerate</span><kbd>S</kbd><span>Brake / Reverse</span></div>
+      <div class="key-row"><kbd>A</kbd><span>Steer left</span><kbd>D</kbd><span>Steer right</span></div>
+      <div class="key-row"><kbd>SPACE</kbd><span>Handbrake</span><kbd>R</kbd><span>Reset vehicle</span></div>
+      <div class="key-row"><kbd>C</kbd><span>Change camera</span><kbd>F</kbd><span>Flip vehicle</span></div>
+    </section>
+
+    <section class="speed-cluster">
+      <div class="speed-number"><span id="big-speed">000</span><small>KM/H</small></div>
+      <div class="speed-label">CURRENT SPEED</div>
+      <div class="gear-indicator">GEAR <b id="big-gear">1</b></div>
+    </section>
+
+    <div class="center-message" id="message">READY TO DRIVE</div>
+    <div class="crosshair"></div>
+
+    <div class="mobile-controls" id="mobile-controls">
+      <div class="steer-controls">
+        <button data-control="left">◀</button>
+        <button data-control="right">▶</button>
+      </div>
+      <div class="pedal-controls">
+        <button data-control="brake">BRAKE</button>
+        <button data-control="gas">GAS</button>
+      </div>
+    </div>
+
+    <div id="pause-overlay" class="overlay hidden">
+      <div class="menu-card glass">
+        <div class="eyebrow">SYSTEM MENU</div>
+        <h2>PAUSED</h2>
+        <p>Your vehicle is waiting.</p>
+        <button id="resume-btn" class="primary-button">RESUME DRIVE</button>
+        <button id="reset-menu-btn" class="secondary-button">RESET VEHICLE</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
